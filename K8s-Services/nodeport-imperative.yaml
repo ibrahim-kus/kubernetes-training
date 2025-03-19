@@ -1,0 +1,14 @@
+
+#kubectl run webpod --image=nginx
+#kubectl expose pod webpod --port=8080 --target-port=80 --type=Nodeport
+#kubectl get svc,pod
+#kubectl get svc,pod -l run=webpod
+#kubectl describe svc webpod
+#kubectl get endpoints
+#kubectl describe endpoints webpod
+#
+#kubectl create deployment webdep --image=nginx --replicas=5
+#kubectl expose deployment webdep --port=8080 --target-port=80 --type=NodePort
+#kubectl get svc,pod -l app=webdep #(label was created automatically)
+#kubectl describe svc webdep
+#kubectl expose deployment webdep --port=8080 --target-port=80 --type=NodePort --dry-run=client -o yaml > webdep-service.yaml

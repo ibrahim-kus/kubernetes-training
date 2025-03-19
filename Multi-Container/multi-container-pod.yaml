@@ -1,0 +1,27 @@
+apiVersion: v1
+kind: Pod
+metadata:
+  name: multi-container-pod
+spec:
+  containers:
+  - name: container-1
+    image: nginx
+    ports:
+    - containerPort: 80  
+  - name: container-2
+    image: alpine
+    command: ["watch", "wget", "-qO-", "localhost"]
+
+#kubectl apply -f multi-container-pod.yaml
+#kubectl get pods
+#kubectl describe pod multi-container-pod
+#kubectl exec -it multi-container-pod --container=container-1 -- /bin/bash ###connect kernel
+#root@multi-container-pod:/# hostname
+#root@multi-container-pod:/# apt update
+#root@multi-container-pod:/# apt install net-tools
+#root@multi-container-pod:/# ifconfig
+
+#kubectl exec -it multi-container-pod --container=container-2 -- /bin/sh
+#/ # ifconfig
+#### Both containers share the same IP. 
+#kubectl logs multi-container-pod -c container-1 (c = container)

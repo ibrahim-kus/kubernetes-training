@@ -1,0 +1,28 @@
+apiVersion: v1
+kind: Pod
+metadata:
+  name: podinitcontainer
+  labels:
+    purpose: demo-initContainer
+spec:
+  initContainers:
+  - name: init-busybox1
+    image: busybox
+    command: ['sh', '-c', 'echo This is the first running app! && sleep 30']
+  - name: init-busybox2
+    image: busybox
+    command: ['sh', '-c', 'echo This is the second running app! && sleep 30']
+  - name: init-busybox3
+    image: busybox
+    command: ['sh', '-c', 'echo This is the third running app! && sleep 30']
+  containers:
+  - name: main-busybox
+    image: busybox
+    command: ["echo","Hello!! l am main container!"]
+  restartPolicy: Never
+
+  #kubectl apply -f podinitcontainer.yaml
+  #kubectl get po
+  #kubectl logs podinitcontainer -c init-busybox1
+  #kubectl logs podinitcontainer
+  

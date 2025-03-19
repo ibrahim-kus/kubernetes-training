@@ -1,0 +1,6 @@
+
+
+#kubectl taint node minikube dedicated=web:NoSchedule
+#kubectl taint node minikube dedicated- #Taint removed
+#kubectl run demotaint --image=nginx --restart=Never
+#pod üzerinde tolerasyon bilgisi olmadığı için pending de kalır.

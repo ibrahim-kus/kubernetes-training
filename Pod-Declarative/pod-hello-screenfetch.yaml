@@ -1,0 +1,15 @@
+apiVersion: v1
+kind: Pod
+metadata:
+  name: pod-hello-screenfetch
+spec:
+  containers:
+  - name: c1
+    image: docker.io/murataksunet/k8s-hellothere
+    command:
+    args:
+    - screenfetch 
+    - "-E"
+
+#1)kubectl apply -f pod-hello-screenfetch.yaml
+#2)kubectl logs pod-hello-screenfetch

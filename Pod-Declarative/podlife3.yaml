@@ -1,0 +1,15 @@
+apiVersion: v1
+kind: Pod
+metadata:
+  name: pod-failed
+spec:
+  restartPolicy: Never
+  containers:
+  - name: c1
+    image: ubuntu:latest
+    command: ['sh', '-c', 'xyz']
+
+#kubectl get po -w
+#kubectl apply -f podlife3.yaml
+#kubectl describe pod/pod-failed => hatanın sebenini buradan bulabiliriz.
+#kubectl delete -f podlife3.yaml 

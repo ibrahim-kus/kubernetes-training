@@ -1,0 +1,7 @@
+
+#kubectl create configmap testconfigmap1 --from-literal=ui.color=red  #imperative
+#kubectl get configmap
+#kubectl describe configmap testconfigmap1
+#
+#kubectl delete configmap testconfigmap1
+#minikube dashboard

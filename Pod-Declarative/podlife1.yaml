@@ -1,0 +1,14 @@
+apiVersion: v1
+kind: Pod
+metadata:
+  name: podimageerror
+spec:
+  containers:
+  - name: containerimageerror
+    image: xnignx
+
+# kubectl apply -f podlife1.yaml
+# kubectl get po -w
+# ImagePullBackOff =>  not find image on repository fault.
+
+
